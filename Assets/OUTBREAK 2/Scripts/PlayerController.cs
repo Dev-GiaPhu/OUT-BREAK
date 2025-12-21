@@ -1,55 +1,27 @@
 using UnityEngine;
-using System.Collections;
 
-public class PlayerController : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    public GameObject player;
-    public float speed = 5f;
-    private Vector2 movement;
-
+    public float moveSpeed = 5f;
     private Rigidbody2D rb;
-    private Animator ani;
-    private Vector2 mousePos;
-    private Camera cam;
-    private bool isShooting = false;
+    
+    [HideInInspector] public Vector2 moveInput;
 
-
-    void Awake()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        ani = GetComponent<Animator>();
-        cam = Camera.main;
-    }
-    void FixedUpdate()
-    {
-        ani.SetFloat("TempX", ani.GetFloat("X"));
-        ani.SetFloat("TempY", ani.GetFloat("Y"));
     }
 
     void Update()
     {
-
-        // Logic di chuyển và bắn súng
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        player.GetComponent<Rigidbody2D>().linearVelocity = movement * speed;
-        // if (Input.GetKeyDown(KeyCode.K)) isAutoFire = !isAutoFire;
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition); 
-        RotateToMouse();
+        // Lấy Input di chuyển
+        moveInput.x = Input.GetAxisRaw("Horizontal");
+        moveInput.y = Input.GetAxisRaw("Vertical");
     }
 
-    void RotateToMouse()
+    void FixedUpdate()
     {
-        ani.SetFloat("X", movement.x);
-        ani.SetFloat("Y", movement.y);
-        if( movement.x == 0 && movement.y == 0)
-        {
-            ani.SetBool("Idle", true);
-        }
-        else
-        {
-            ani.SetBool("Idle", false);
-        }
+        // Di chuyển nhân vật
+        rb.MovePosition(rb.position + moveInput.normalized * moveSpeed * Time.fixedDeltaTime);
     }
 }

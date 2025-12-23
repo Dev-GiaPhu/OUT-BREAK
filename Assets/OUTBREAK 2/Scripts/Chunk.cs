@@ -11,7 +11,7 @@ public class Chunk : MonoBehaviour
 
     [Header("Chunk Settings")]
     public List<GameObject> chunkPrefabs;
-    public Vector2 checkBoxSize = new Vector2(1.8f, 1.8f);
+    public Vector3 checkBoxSize = new Vector3(1.8f, 1.8f, 0);
     public float checkOffset = 1.9f;
 
     private Transform mapParent;
@@ -74,13 +74,11 @@ public class Chunk : MonoBehaviour
 #if UNITY_EDITOR
     void OnDrawGizmos()
     {
-        if (AxisTop == null) return;
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(AxisTop.position + Vector3.up * checkOffset, checkBoxSize);
-        Gizmos.DrawWireCube(AxisBottom.position + Vector3.down * checkOffset, checkBoxSize);
-        Gizmos.DrawWireCube(AxisLeft.position + Vector3.left * checkOffset, checkBoxSize);
-        Gizmos.DrawWireCube(AxisRight.position + Vector3.right * checkOffset, checkBoxSize);
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireCube(
+            transform.position,
+            checkBoxSize
+        );
     }
 #endif
 }

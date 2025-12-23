@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6468057508126346256}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: FirePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 938700747082060115}
   - component: {fileID: 2966148572265077934}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: PosCustom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,18 +104,19 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1919012667
+  m_SortingLayerID: -1869315837
   m_SortingLayer: 1
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 6542533971748264620, guid: 0ccd9b38863244f48bff912ca378ee48,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 0.96, y: 0.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &8417954683037338655
@@ -127,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3880067113040698710}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +167,7 @@ GameObject:
   - component: {fileID: 8780733642522202395}
   - component: {fileID: 7566615290532706001}
   - component: {fileID: 1149954790443346420}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -230,10 +231,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1919012667
+  m_SortingLayerID: -1869315837
   m_SortingLayer: 1
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 3278449094680734212, guid: 5d3f9ac2cf8c34ac2b578ab1dc518f3a, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 3278449094680734212, guid: 5d3f9ac2cf8c34ac2b578ab1dc518f3a,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

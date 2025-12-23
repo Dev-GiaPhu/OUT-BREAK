@@ -82,8 +82,8 @@ public class PlayerAimAndWeapon : MonoBehaviour
 
         // ĐỒNG BỘ LAYER: Nếu nhân vật xoay lên (finalY = 1), súng nằm sau lưng
         if (currentFinalY > 0)
-            weaponSprite.sortingOrder = -1; // Sau lưng Player
+            weaponSprite.sortingOrder = 1; // Sau lưng Player
         else
-            weaponSprite.sortingOrder = 1;  // Trước mặt Player
+            weaponSprite.sortingOrder = 3;  // Trước mặt Player
     }
 }

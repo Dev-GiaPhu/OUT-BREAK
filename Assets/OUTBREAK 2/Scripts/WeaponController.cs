@@ -7,17 +7,13 @@ public class WeaponController : MonoBehaviour
     public Transform firePoint;    // Điểm xuất hiện đạn
     public GameObject Gun;
 
-    void Awake()
-    {
-        weaponSprite = GetComponent<SpriteRenderer>();
-    }
     void Start()
     {
         LoadGun(currentGunData);
     }
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && currentGunData != null)
         {
             Shoot();
         }
@@ -35,7 +31,13 @@ public class WeaponController : MonoBehaviour
 
     public void Shoot()
     {
-        // Sử dụng bulletPrefab từ dữ liệu súng
-        Instantiate(currentGunData.bulletPrefab, firePoint.position, Gun.transform.rotation);
+        if( currentGunData != null)
+        {
+            Instantiate(currentGunData.bulletPrefab, firePoint.position, Gun.transform.rotation);
+        }
+        else
+        {
+            Debug.Log("Khong co sung");
+        }
     }
 }

@@ -19,14 +19,8 @@ public class bullet : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            //bala
-        }
-        else if( !collision.gameObject.CompareTag("Player") )
-        {
-            Instantiate(particle, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
+        Instantiate(particle, transform.position, Quaternion.identity); 
+        Destroy(gameObject);
     }
 }
+    

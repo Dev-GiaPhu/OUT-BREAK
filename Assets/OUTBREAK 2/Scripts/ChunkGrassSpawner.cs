@@ -28,6 +28,7 @@ public class ChunkGrassSpawner : MonoBehaviour
     public int seed = 0;
 
     public bool randomRotation = true;
+    
 
     // ================= CORE =================
     [ContextMenu("Generate Grass")]

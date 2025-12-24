@@ -36,6 +36,10 @@ public class MonsterSpawner : MonoBehaviour
     public int seed = 0;
     public bool randomRotation = false;
 
+    public void Start()
+    {
+        Generate();
+    }
     [ContextMenu("Generate Monsters")]
     public void Generate()
     {

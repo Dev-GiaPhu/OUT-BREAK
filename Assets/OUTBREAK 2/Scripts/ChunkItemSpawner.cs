@@ -35,6 +35,10 @@ public class ChunkItemSpawner : MonoBehaviour
     public int seed = 0;
     public bool randomRotation = false;
 
+    public void Start()
+    {
+        Generate();
+    }
     [ContextMenu("Generate Items")]
     public void Generate()
     {

@@ -4,7 +4,7 @@ public class PlayerAimAndWeapon : MonoBehaviour
 {
     [Header("Components")]
     private Animator animator;
-    private PlayerMovement movement;
+    private PlayerController movement;
     public Camera mainCam;
 
     [Header("Weapon Setup")]
@@ -19,13 +19,19 @@ public class PlayerAimAndWeapon : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
-        movement = GetComponent<PlayerMovement>();
+        movement = GetComponent<PlayerController>();
     }
 
     void Update()
     {
+        if(mainCam == null)
+        {
+            Debug.Log("Main Camera not found!");
+            mainCam = Camera.main;
+        }
         // 1. Lấy vị trí chuột và tính hướng từ Player
         Vector3 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        Debug.Log($"Mouse Position: {mousePos.ToString()}");
         Vector2 lookDir = (Vector2)mousePos - (Vector2)transform.position;
 
         // 2. Cập nhật hướng nhìn nhân vật (Gọi trước để có currentFinalY)
@@ -82,7 +88,7 @@ public class PlayerAimAndWeapon : MonoBehaviour
 
         // ĐỒNG BỘ LAYER: Nếu nhân vật xoay lên (finalY = 1), súng nằm sau lưng
         if (currentFinalY > 0)
-            weaponSprite.sortingOrder = 1; // Sau lưng Player
+            weaponSprite.sortingOrder = 2; // Sau lưng Player
         else
             weaponSprite.sortingOrder = 3;  // Trước mặt Player
     }
